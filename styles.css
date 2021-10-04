@@ -82,7 +82,7 @@ main {
 }
 
 .card--content {
-    padding: 1.8em 1.25em;
+    padding: 2rem 1.25rem;
 }
 
 .intro p {
@@ -91,6 +91,7 @@ main {
     font-size: 0.9375em;
     line-height: 1.8;
     padding-bottom: 2rem;
+    padding-inline: 0.5rem;
 }
 
 .intro span {
@@ -119,6 +120,7 @@ main {
     font-size: 11px;
     text-align: center;
     color: var(--clr-main-heading-stats);
+    bottom: 0;
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
