@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
 
 :root {
+    /* colors */
     --clr-bg: hsl(233, 47%, 7%);
     --clr-bg-card: hsl(244, 38%, 16%);
     --clr-accent: hsl(277, 64%, 61%);
@@ -8,12 +9,15 @@
     --clr-main-paragraph: hsla(0, 0%, 100%, 0.75);
     --clr-stat-headings: hsla(0, 0%, 100%, 0.6);
 
+    /* font stuff */
     --ff-primary: "Inter", sans-serif;
     --ff-secondary: "Lexend Deca", sans-serif;
 
     --fw-regular: 400;
     --fw-bold: 700;
 }
+
+/* global styling */
 
 *,
 *::before,
@@ -24,15 +28,141 @@
 }
 
 body {
+    background-color: var(--clr-bg);
+
     font-family: var(--ff-primary);
     font-size: 0.9375rem;
     font-weight: var(--fw-regular);
 }
 
+/* typography */
+
+h1 {
+    color: var(--clr-main-heading-stats);
+    font-size: 1.75rem;
+    font-weight: var(--fw-bold);
+    padding-bottom: 1rem;
+}
+
+h2 {
+    color: var(--clr-main-heading-stats);
+    font-size: 1.5em;
+}
+
+/* card styling */
+
+main {
+    height: 100vh;
+    width: min(80%, 60rem);
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--clr-bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card--image {
+    background-color: var(--clr-accent);
+    background-image: url("./images/image-header-mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 15rem;
+    background-blend-mode: multiply;
+    opacity: 0.75;
+}
+
+.card--content {
+    padding: 1.8em 1.25em;
+}
+
+.intro p {
+    color: var(--clr-main-paragraph);
+    font-weight: var(--fw-regular);
+    font-size: 0.9375em;
+    line-height: 1.8;
+    padding-bottom: 2rem;
+}
+
+.intro span {
+    color: var(--clr-accent);
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+}
+
+.column + .column {
+    margin-top: 1.5em;
+}
+
+.stats .column p {
+    color: var(--clr-stat-headings);
+    text-transform: uppercase;
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-regular);
+    font-size: 0.75rem;
+    padding-top: -0.5em;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
+    color: var(--clr-main-heading-stats);
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 600px) {
+    .stats {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: start;
+    }
+
+    .column + .column {
+        margin-top: 0em;
+    }
+}
+
+@media only screen and (min-width: 1110px) {
+    .card {
+        flex-direction: row-reverse;
+        text-align: start;
+    }
+
+    .card--image {
+        flex-basis: 45%;
+        background-image: url("./images/image-header-desktop.jpg");
+        height: 100%;
+    }
+
+    .card--content {
+        flex-basis: 55%;
+        padding: 4rem;
+    }
+
+    .card--content .intro h1 {
+        font-size: 2.25rem;
+    }
+
+    .stats {
+        justify-content: flex-start;
+        margin-top: 2em;
+    }
+
+    .stats .column + .column {
+        margin-left: 3.5rem;
+    }
 }
