@@ -55,6 +55,7 @@ main {
     height: 100vh;
     width: min(80%, 60rem);
     margin: 0 auto;
+    padding-block: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -91,7 +92,6 @@ main {
     font-size: 0.9375em;
     line-height: 1.8;
     padding-bottom: 2rem;
-    padding-inline: 0.5rem;
 }
 
 .intro span {
@@ -120,7 +120,6 @@ main {
     font-size: 11px;
     text-align: center;
     color: var(--clr-main-heading-stats);
-    bottom: 0;
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
